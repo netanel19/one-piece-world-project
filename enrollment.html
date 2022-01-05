@@ -1,0 +1,71 @@
+<html dir="rtl">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+</script>
+
+<div class="lauf">
+  <img src="https://i2.wp.com/multiversesite.com/wp-content/uploads/2018/08/manga-vs-anime-one-piece.jpg?resize=1038%2C576&ssl=1" width="300" height="180" id="imge" >
+  <div />
+  <h1> הרשמה </h1>
+  שם המשתמש: <input placeholder="שם משתמש" class="inputStyle" id="username" /> <br> </p>
+  סיסמה: <input placeholder="סיסמה" class="inputStyle" id="password" type="password" /> <br> </p>
+  איימל: <input placeholder="איימל" class="inputStyle" id="gmail" type="gmail" /> <br> </p>
+  אווטאר: <input placeholder="האווטאר שלך.." class="inputStyle" id="avatar" /> <br> </p>
+
+
+
+  <button onclick="enrollment()"> הרשמה </button>
+  <button onclick="changeimge()"> החלף תמונה </button>
+  <button onclick="moveimge()" id="btn"> הזזת תמונה  </button>
+  <br/>
+
+
+  <script>
+    $(document).ready(function() {
+    $("#btn").click(function() {
+      $('#imge').toggleClass('animate');
+      $('#imge').animate({
+        height: '150px',
+        width: '300px'
+      }, 600);
+    })
+  })
+
+   function changeimge() {
+   //const changeimge = document.getElementById("changeimge");
+   //const avatar = document.getElementById("avatar");
+   // imge.src = avatar.value
+   
+ 
+   imge.src="http://onepiece-nakama.com/wp-content/uploads/2019/09/HorribleSubs-One-Piece-903-1080p.00_16_58_03.Still001.jpg"
+   }
+   function moveimge () {
+      const moveimge = document.getElementById("moveimge");
+      imge.style.position = 'absolute';
+      imge.style.top = '400px';
+
+    
+   }
+    function enrollment() {
+      const user = document.getElementById("username");
+      const password = document.getElementById("password");
+       const gmail = document.getElementById("gmail");
+       
+       if (password.value.length < 3 || password.value.length > 10) {
+         alert("הסיסמה שלך לא תקינה");
+        } else {
+        alert(`היי ${username.value}`);
+         }
+         if (gmail.value.length < 5 || gmail.value.length > 100 ||!gmail.value.includes("@")); {
+         alert("האיימל שלך לא תקין")
+      }
+      
+     }
+
+  </script>
+
+  <a href="index.html"> חזרה לראשי</a> <br>
+
+</html>
